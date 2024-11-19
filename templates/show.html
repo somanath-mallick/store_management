@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Background Login Form</title>
-    <link rel="stylesheet" href="../style.css/login.css">
+    <title>G&C Cloth Store for Kids and Girls</title>
+    <link rel="stylesheet" href="../style.css/show.css">
+    <link rel="stylesheet" href="../style.css/data-table.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
+    <div class="navbar">
+        <div class="welcome-message">Welcome to G&C Cloth Store</div>
+        <img src="https://t4.ftcdn.net/jpg/08/37/15/95/360_F_837159599_BzfbjqWrXF3CJM67ggbYinnWdQzG0P6D.jpg" alt="Background" class="background-image">
 
-    <a href="javascript:history.back()" class="back-button">Back</a>
-
-    <img src="https://i.postimg.cc/MTRK7Thf/bg-form.jpg" alt="Background" class="background-image">
-
+        <button class="nav-btn1" onclick="window.location.href='insert.html';">Insert Page</button>
+        <button class="nav-btn" onclick="window.location.href='login.html';">Logout</button>
+    </div>
+   
     <div class="form-container">
+         <!-- Navigation Bar -->
+   
         <div class="filter-form">
             <form id="filterForm">
                 <label for="item">Select Item:</label>
@@ -50,7 +56,6 @@
             </table>
         </div>
     </div>
-    <button class="redirect-btn" onclick="window.location.href='insert.html';">Go to Insert Page</button>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/login.js"></script>

@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insert Form</title>
-    <link rel="stylesheet" href="../style.css/login.css">
+    <title>G&C cloth store for kid's and Girls</title>
+    <link rel="stylesheet" href="../style.css/insert.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <!-- Back Button -->
     <a href="javascript:history.back()" class="back-button">Back</a>
 
-    <img src="https://i.postimg.cc/MTRK7Thf/bg-form.jpg" alt="Background" class="background-image">
+    <img src="https://t4.ftcdn.net/jpg/08/37/15/95/360_F_837159599_BzfbjqWrXF3CJM67ggbYinnWdQzG0P6D.jpg" alt="Background" class="background-image">
     
     <div class="container">
-        <form onsubmit="submitForm(event)">
+        <form onsubmit="insertData(event)">
             <h1>Update</h1>
-
+        
             <!-- Category dropdown -->
             <div class="input-box">
                 <label for="item">Select Item</label>
@@ -27,15 +27,17 @@
                     <option value="Scraps">Scraps</option>
                 </select>
             </div>
-
+        
             <div class="input-box">
                 <label for="price">Price</label>
                 <input type="number" id="price" name="price" placeholder="Enter price" min="0" step="0.01" required>
             </div>
-
+        
             <button type="submit" class="btn">Submit</button>
         </form>
+        
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="../js/login.js"></script>
 </body>

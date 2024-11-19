@@ -1,11 +1,13 @@
-function insertData() {
+function insertData(event) {
+    event.preventDefault(); // Prevent form submission
+
     const requestData = {
-        items: $('#itemsInput').val(),  
-        amount: parseInt($('#amountInput').val(), 10) 
+        items: $('#item').val(),  // Corrected id
+        amount: parseFloat($('#price').val())  // Corrected id and changed to parseFloat
     };
 
     $.ajax({
-        url: '/insert',
+        url: 'http://127.0.0.1:5000/insert',
         method: 'POST',
         contentType: 'application/json',
         data: JSON.stringify(requestData),
@@ -145,5 +147,4 @@ $(document).ready(function() {
     });
 });
 
-// insert 
 
