@@ -7,9 +7,10 @@ from datetime import datetime
 app = Flask(__name__)
 CORS(app)
 DB_HOST = "localhost"
-DB_NAME = "store"
+DB_NAME = "store_master"
 DB_USER = "postgres"
-DB_PASS = "postgres"
+# DB_PASS = "postgres"
+DB_PASS = "Orsac@123"
 
 def get_db_connection():
     conn = psycopg2.connect(
@@ -127,9 +128,33 @@ def show():
         print("Database error:", e) 
         return jsonify({"message": f"An error occurred: {str(e)}"}), 500
     
-    finally:
-        cursor.close()
-        conn.close()
+    # finally:
+    #     cursor.close()
+    #     conn.close()
+
+@app.route('/sign_up', methods=['POST'])
+def sign_up():
+    if not request.is_json:
+        return jsonify({"error": "Invalid input format. JSON expected"}), 400
+
+    data = request.json
+    phone_no = data.get('phone_no')
+    password = data.get('password')
+
+    if not phone_no or not password:
+        return jsonify({"error": "Both phone_no and password are required"}), 400
+
+    query = '''INSERT INTO public.users (phone_no, password) VALUES (%s, %s)'''
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute(query, (phone_no, password))
+        conn.commit()
+        return jsonify({"message": "User registered successfully"}), 201
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

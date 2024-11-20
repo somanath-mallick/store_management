@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G&C cloth store for kid's and Girls</title>
-    <link rel="stylesheet" href="../style/sign_up.css">
+    <link rel="stylesheet" href="../style.css/sign_up.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <div class="navbar">
+        <div class="welcome-message">Welcome to G&C Cloth Store</div>
+        <img src="https://t4.ftcdn.net/jpg/08/37/15/95/360_F_837159599_BzfbjqWrXF3CJM67ggbYinnWdQzG0P6D.jpg" alt="Background" class="background-image">
+
+    </div>
     <a href="javascript:history.back()" class="back-button">Back</a>
     <img src="https://t4.ftcdn.net/jpg/08/37/15/95/360_F_837159599_BzfbjqWrXF3CJM67ggbYinnWdQzG0P6D.jpg" alt="Background" class="background-image">
     <div class="container">
-        <form action="#">
+        <form onsubmit="sign_up(event)">
             <h1>Signup</h1>
             <div class="input-box">
                 <input type="tel" name="mobile" placeholder="Mobile No" required>
@@ -22,9 +27,13 @@
                 <i class='bx bx-lock-alt'></i>
             </div>
            
-            <button type="submit" class="btn">sign_up</button>
+            <button type="submit" class="btn">SignUp</button>
             
         </form>
+       
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="../js/login.js"></script>
 </body>
 </html>

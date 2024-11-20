@@ -73,6 +73,14 @@ $(document).ready(function() {
 });
 
 
+// Function to format date
+function formatDate(dateString) {
+    if (!dateString) return ''; // Handle empty or undefined dates
+    const date = new Date(dateString);
+    const options = { day: '2-digit', month: 'short', year: 'numeric' }; // e.g., 20 Nov 2024
+    return date.toLocaleDateString('en-GB', options);
+}
+
 function showdata() {
     $.ajax({
         url: 'http://127.0.0.1:5000/show', 
@@ -85,8 +93,8 @@ function showdata() {
             response.forEach(function(row) {
                 var tableRow = '<tr>';
                 tableRow += '<td>' + row.items + '</td>';
-                tableRow += '<td>' + row.start_date + '</td>';
-                tableRow += '<td>' + row.end_date + '</td>';
+                tableRow += '<td>' + formatDate(row.start_date) + '</td>'; // Format start date
+                tableRow += '<td>' + formatDate(row.end_date) + '</td>';   // Format end date
                 tableRow += '<td>' + row.amount + '</td>';
                 tableRow += '</tr>';
                 $('#dataTableBody').append(tableRow);  
@@ -132,8 +140,8 @@ $(document).ready(function() {
                 response.forEach(function(row) {
                     var tableRow = '<tr>';
                     tableRow += '<td>' + row.items + '</td>';
-                    tableRow += '<td>' + row.start_date + '</td>';
-                    tableRow += '<td>' + row.end_date + '</td>';
+                    tableRow += '<td>' + formatDate(row.start_date) + '</td>'; 
+                    tableRow += '<td>' + formatDate(row.end_date) + '</td>';   
                     tableRow += '<td>' + row.amount + '</td>';
                     tableRow += '</tr>';
                     $('#dataTableBody').append(tableRow);
@@ -147,4 +155,76 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function () {
+    $('#downloadButton').on('click', function () {
+        const csv = convertTableToCSV();
+        if (csv.trim()) {
+            downloadCSV(csv, 'data_export.csv');
+        } else {
+            alert('No data available to download!');
+        }
+    });
+});
 
+function convertTableToCSV() {
+    let csv = 'Item,Start Date,End Date,Price\n'; 
+
+    $('#dataTableBody tr').each(function () {
+        const row = $(this)
+            .find('td') 
+            .map(function () {
+                return $(this).text().trim(); 
+            })
+            .get()
+            .join(','); 
+        csv += row + '\n'; 
+    });
+
+    return csv;
+}
+
+// Trigger the Download of the CSV File
+function downloadCSV(csv, filename) {
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+
+
+function sign_up(event) {
+    event.preventDefault(); 
+
+    const mobile = document.querySelector('input[name="mobile"]').value.trim();
+    const password = document.querySelector('input[name="password"]').value.trim();
+
+    if (!mobile || !password) {
+        alert('Please fill in all fields');
+        return;
+    }
+
+    $.ajax({
+        url: 'http://127.0.0.1:5000/sign_up', 
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            phone_no: mobile,
+            password: password
+        }),
+        beforeSend: function () {
+            console.log('Sending data...');
+        },
+        success: function (response) {
+            alert(response.message || 'Sign up successful!');
+            document.querySelector('form').reset();
+        },
+        error: function (xhr) {
+            const errorMessage = xhr.responseJSON?.error || 'An error occurred. Please try again.';
+            alert(errorMessage);
+        }
+    });
+}

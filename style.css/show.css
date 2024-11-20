@@ -202,7 +202,7 @@ body {
 .filter-form, .data-form {
     margin-bottom: 20px;
     color: white;
-    background-color: #1c2a2259;
+    background-color: #24301fab;
 }
 
 .filter-form select, .filter-form input {
@@ -215,7 +215,7 @@ body {
 
 
 .apply-button {
-    background-color: green;
+    background-color: #11df11fc;
     color: white;
     padding: 8px 15px;
     border: none;
@@ -277,11 +277,14 @@ body {
 .data-table {
     width: 100%;
     border-collapse: collapse;
+    background-color: #24301fab;
+    color: white;
+
 }
 
 .data-table th, .data-table td {
     padding: 10px;
-    border: 1px solid #181616;
+    border: 1px solid white;
 }
 
 .redirect-btn, .logout-btn {
@@ -301,9 +304,9 @@ body {
 .welcome-message {
     font-size: 20px;
     font-weight: bold;
-    color: white; /* Text color */
+    color: black; /* Text color */
     white-space: nowrap;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
     animation: slideIn 1.5s ease-out forwards;
 }
@@ -323,7 +326,7 @@ body {
 /* Button styling */
 .nav-btn {
     margin: 0 10px;
-    padding: 10px 15px;
+    padding: 8px 15px;
     background-color: #3b6c16;
     color: #fff;
     border: none;
@@ -337,8 +340,9 @@ body {
     background-color: #7fb165;
 }
 .nav-btn1 {
-    margin-left: 1355px;
-    padding: 10px 15px;
+    margin-left: 824px;
+    /* margin-right: 10px; */
+    padding: -1px 15px;
     background-color: #3b6c16;
     color: #fff;
     border: none;
@@ -350,5 +354,25 @@ body {
 
 .nav-btn:hover {
     background-color: #7fb165;
+}
+
+#downloadButton {
+    background-color: #2d7e23;
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    margin-left: 1142px;
+    margin-top: 250px;
+    border-radius: 5px; 
+    font-size: 16px; 
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+#downloadButton:hover {
+    background-color: #0f4d07; 
+    transform: scale(1.05); 
 }
 

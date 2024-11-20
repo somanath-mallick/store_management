@@ -12,25 +12,21 @@
     <div class="navbar">
         <div class="welcome-message">Welcome to G&C Cloth Store</div>
         <img src="https://t4.ftcdn.net/jpg/08/37/15/95/360_F_837159599_BzfbjqWrXF3CJM67ggbYinnWdQzG0P6D.jpg" alt="Background" class="background-image">
-
         <button class="nav-btn1" onclick="window.location.href='insert.html';">Insert Page</button>
         <button class="nav-btn" onclick="window.location.href='login.html';">Logout</button>
     </div>
 
-   
-    <div style="text-align: center; padding-left: 20%; padding-right: 20%;">
-         <!-- Navigation Bar -->
-   
+    <div style="text-align: center; padding-left: 10%; padding-right: 10%;">
         <div class="filter-form">
             <form id="filterForm">
                 <label for="item">Select Item:</label>
                 <select id="item" name="item">
-                    <option value="items0">Select Item:</option>
+                    <option value="">Select Item</option>
                     <option value="Boys">Boys</option>
                     <option value="Girls">Girls</option>
                     <option value="Scraps">Scraps</option>
                 </select>
-                
+
                 <label for="startdate">Start Date:</label>
                 <input type="date" id="startdate" name="startdate">
 
@@ -41,8 +37,8 @@
             </form>
         </div>
 
-        <div class="data-form">
-            <h3>All Data</h3>
+        <!-- <div class="data-form"> -->
+            <!-- <h3>All Data</h3> -->
             <table class="data-table">
                 <thead>
                     <tr>
@@ -52,14 +48,13 @@
                         <th>Price</th>
                     </tr>
                 </thead>
-                <tbody id="dataTableBody">
-                </tbody>
+                <tbody id="dataTableBody"></tbody>
             </table>
         </div>
-    </div>
+    <!-- </div> -->
+    <button id="downloadButton">Download CSV</button>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/login.js"></script>
-
 </body>
 </html>
