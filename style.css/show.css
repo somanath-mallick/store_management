@@ -258,34 +258,7 @@ body {
     overflow: hidden; 
 }
 
-.form-container {
-    max-width: 1202px;
-    /* margin: 1px auto; */
-    margin-left: 333px;
-    padding: 7px;
-    /* background-color: #4448397d; */
-    margin-top: 81px;
-}
 
-.data-form {
-    max-height: 450px; 
-    overflow-y: auto; 
-    border: 1px solid #ddd; 
-    margin-top: 20px;
-}
-
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #24301fab;
-    color: white;
-
-}
-
-.data-table th, .data-table td {
-    padding: 10px;
-    border: 1px solid white;
-}
 
 .redirect-btn, .logout-btn {
     margin-top: 20px;
@@ -294,7 +267,7 @@ body {
 /* Navigation bar styling */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Space out welcome message and buttons */
+    justify-content: space-between; 
     align-items: center;
     padding: 10px 20px;
     background-color: #90c11b7d;
@@ -304,9 +277,8 @@ body {
 .welcome-message {
     font-size: 20px;
     font-weight: bold;
-    color: black; /* Text color */
+    color: black;
     white-space: nowrap;
-    /* overflow: hidden; */
     position: relative;
     animation: slideIn 1.5s ease-out forwards;
 }
@@ -352,27 +324,48 @@ body {
     transition: background-color 0.3s;
 }
 
-.nav-btn:hover {
+.nav-btn1:hover {
     background-color: #7fb165;
 }
 
 #downloadButton {
     background-color: #2d7e23;
     color: white; 
-    padding: 10px 20px; 
+    padding: 8px 20px; 
     border: none; 
-    margin-left: 1142px;
-    margin-top: 250px;
-    border-radius: 5px; 
-    font-size: 16px; 
-    font-weight: bold;
+    border-radius: 15px; 
+    font-size: 13px; 
     cursor: pointer;
     text-transform: uppercase; 
     transition: background-color 0.3s ease, transform 0.2s ease; 
+
+    position: fixed; 
+    top: 550px; 
+    left: 1162px; 
 }
 
 #downloadButton:hover {
     background-color: #0f4d07; 
     transform: scale(1.05); 
+}
+
+.table-container {
+    max-height: 300px; 
+    overflow-y: auto; 
+    background-color: #1e3420a3;
+
+    overflow-x: hidden; 
+    border: 1px solid #ddd; 
+}
+
+.data-table {
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: left;
 }
 
