@@ -109,12 +109,12 @@ img{
 
 .register p a{
     font-weight: 600;
-    color: #fff;
+    color: #000;
     font-size: 18px;
 }
 
 .register p a:hover{
-    color: #000dff;
+    color: #074722;
 }
 
 .input-box {
